@@ -1,0 +1,124 @@
+.screen-1 {
+    position: relative;
+    background: url("../images/QixiA.png");
+    background-size: 100% 100%;
+    /*width: 25%;*/
+    height: 100%;
+}
+.screen-1-top{
+    background: url("../images/background/a_background_top.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 71.5%;
+}
+.screen-1-middle{
+    background: url("../images/background/a_background_middle.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 13.5%;
+}.screen-1-bottom{
+     background: url("../images/background/a_background_botton.png");
+     background-size: 100% 100%;
+     width: 100%;
+     height: 15%;
+ }
+ /*  云 */
+ .cloudArea{}
+ .cloudArea .cloud{
+     z-index: 2;
+     position: absolute;
+ }
+.cloudArea .cloud1{
+    width: 181px;
+    height: 101px;
+    left: -5%;
+    top: 12%;
+    background: url("../images/cloud1.png");
+}
+.cloudArea .cloud2{
+    width: 290px;
+    height: 130px;
+    left: 62%;
+    top: -1%;
+    background: url("../images/cloud2.png");
+}
+.cloudA{
+    -webkit-animation-name: cloudA;
+    -webkit-animation-duration: 30s;
+    -moz-animation-name: cloudA;
+    -moz-animation-duration: 30s;
+}
+.cloudB{
+    -webkit-animation-name: cloudB;
+    -webkit-animation-duration: 30s;
+    -moz-animation-name: cloudB;
+    -moz-animation-duration: 30s;
+}
+
+@-webkit-keyframes cloudA {
+    0%{
+        left: -5%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@-moz-keyframes cloudA {
+    0%{
+        left: -5%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes cloudB {
+    0%{
+        left: 62%;
+    }
+    100%{
+        left: -30%;
+    }
+}
+@-moz-keyframes cloudB {
+    0%{
+        left: 62%;
+    }
+    100%{
+        left: -10%;
+    }
+}
+
+/* 太阳 */
+#sun{
+    position: absolute;
+    z-index: 1;
+    width: 183px;
+    height: 192px;
+    background: url("../images/sun.png");
+    top: -6%;
+    left: 38%;
+}
+.rotation{
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 30s;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 30s;
+}
+
+@-webkit-keyframes rotation {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    100%{
+        transform: translateX(-2000px) translateY(400px);
+    }
+}
+@-moz-keyframes rotation {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    100%{
+        transform: translateX(-2000px) translateY(400px);
+    }
+}

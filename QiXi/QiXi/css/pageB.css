@@ -1,0 +1,269 @@
+/*背景图*/
+
+
+.screen-2 {
+    background: url("../images/QixiB-dark.png");
+    background-size: 100% 100%;
+    /*width: 100%;*/
+    height: 100%;
+}
+.doorBox{}
+.door-left, .door-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+.door-left{
+    background: url("../images/door-left.png");
+    background-size: 100% 100%;
+    height: 23.3%;
+    width: 6.3%;
+    left: 52.1%;
+    top: 48.3%;
+    transform: rotateY(0deg);
+    transform-origin: 0;
+/*    transform: rotate(45deg);
+    transform-origin:20% 40%;
+
+    -ms-transform: rotate(45deg); 		!* IE 9 *!
+    -ms-transform-origin:20% 40%; 		!* IE 9 *!
+
+    -webkit-transform: rotate(45deg);	!* Safari 和 Chrome *!
+    -webkit-transform-origin:20% 40%;	!* Safari 和 Chrome *!
+
+    -moz-transform: rotate(45deg);		!* Firefox *!
+    -moz-transform-origin:20% 40%;		!* Firefox *!
+
+    -o-transform: rotate(45deg);		!* Opera *!
+    -o-transform-origin:20% 40%;		!* Opera *!*/
+}
+.door-right{
+    background: url("../images/door-right.png");
+    background-size: 100% 100%;
+    height: 23.3%;
+    width: 6.3%;
+    left: 58.4%;
+    top: 48.3%;
+    transform: rotateY(0deg);
+    transform-origin: 100%;
+}
+/*  开门  */
+.openTheDoor{
+    -webkit-animation-name: openTheDoor;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: openTheDoor;
+    -moz-animation-duration: 1s;
+}
+@-webkit-keyframes openTheDoor {
+    0% {
+        transform-origin: 100%;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 100%;
+        transform: rotateY(-90deg);
+    }
+}
+@-moz-keyframes openTheDoor {
+    0% {
+        transform-origin: 100%;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 100%;
+        transform: rotateY(-90deg);
+    }
+}
+.openTheDoor1{
+    -webkit-animation-name: openTheDoor1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: openTheDoor1;
+    -moz-animation-duration: 1s;
+}
+@-webkit-keyframes openTheDoor1 {
+    0% {
+        transform-origin: 0;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 0;
+        transform: rotateY(-90deg);
+    }
+}
+@-moz-keyframes openTheDoor1 {
+    0% {
+        transform-origin: 0;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 0;
+        transform: rotateY(-90deg);
+    }
+}
+
+/*  关门  */
+
+.closeTheDoor{
+    -webkit-animation-name: closeTheDoor;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: closeTheDoor;
+    -moz-animation-duration: 1s;
+}
+@-webkit-keyframes closeTheDoor {
+    0% {
+        transform-origin: 100%;
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform-origin: 100%;
+        transform: rotateY(0deg);
+    }
+}
+@-moz-keyframes closeTheDoor {
+    0% {
+        transform-origin: 100%;
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform-origin: 100%;
+        transform: rotateY(0deg);
+    }
+}
+.closeTheDoor1{
+    -webkit-animation-name: closeTheDoor1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: closeTheDoor1;
+    -moz-animation-duration: 1s;
+}
+@-webkit-keyframes closeTheDoor1 {
+    0% {
+        transform-origin: 0;
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform-origin: 0;
+        transform: rotateY(0deg);
+    }
+}
+@-moz-keyframes closeTheDoor1 {
+    0% {
+        transform-origin: 0;
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform-origin: 0;
+        transform: rotateY(0deg);
+    }
+}
+
+/*
+.b_background {
+    width: 100%;
+    height: 100%;
+    background-image: url("http://img.mukewang.com/55ade06f00015a0d14410901.png");
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.b_background_preload {
+    background: url("http://img.mukewang.com/55ade0be0001a37914410901.png") no-repeat -9999px -9999px;
+}
+
+.lamp-bright {
+    background-image: url("http://img.mukewang.com/55ade0be0001a37914410901.png");
+}
+
+
+!*商店*!
+
+.shop {
+    width: 39.5%;
+    height: 35.5%;
+    position: absolute;
+    left: 29%;
+    top: 36.5%;
+}
+
+.door {
+    position: absolute;
+    width: 32%;
+    height: 100%;
+    top: 32%;
+    height: 68%;
+    overflow: hidden;
+    left: 58.5%;
+}
+
+.door-left,
+.door-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+.door-left {
+    left: 0%;
+    background: url(http://img.mukewang.com/55ade1140001050d00910231.png);
+    background-size: 100% 100%;
+}
+
+.door-right {
+    left: 50%;
+    background: url(http://img.mukewang.com/55ade12100019f5b00910231.png);
+    background-size: 100% 100%;
+}
+
+
+!*鸟*!
+
+.bird {
+    min-width: 91px;
+    min-height: 71px;
+    top: 10%;
+    position: absolute;
+    z-index: 10;
+    right: -91px;
+    background: url(http://img.mukewang.com/55ade1700001b38302730071.png) -182px 0px no-repeat;
+}
+.birdFly {
+    -webkit-animation-name: bird-slow;
+    -webkit-animation-duration: 400ms;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: bird-slow;
+    -moz-animation-duration: 400ms;
+    -moz-animation-timing-function: step-start;
+    -moz-animation-iteration-count: infinite;
+}
+
+
+!*鸟慢飞*!
+@-webkit-keyframes bird-slow {
+    0% {
+        background-position: -182px 0px;
+    }
+    50% {
+        background-position: 0px 0px;
+    }
+    75% {
+        background-position: -91px 0px;
+    }
+    100% {
+        background-position: -182px 0px;
+    }
+}
+
+@-moz-keyframes bird-slow {
+    0% {
+        background-position: -182px 0px;
+    }
+    50% {
+        background-position: 0px 0px;
+    }
+    75% {
+        background-position: -91px 0px;
+    }
+    100% {
+        background-position: -182px 0px;
+    }
+}*/

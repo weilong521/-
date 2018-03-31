@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>七夕主题</title>
+    <link rel='stylesheet' href='css/style.css' />
+    <link rel='stylesheet' href='css/pageA.css' />
+    <link rel='stylesheet' href='css/pageB.css' />
+    <!--<link rel='stylesheet' href='css/pageC.css' />-->
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+        }
+        .button {
+            position: absolute;
+            bottom: 0;
+        }
+        .stop{
+            left: 200px;
+        }
+        .clickDoor{
+            left: 300px;
+        }
+        .clickDoor1{
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+<div id='content'>
+    <ul class='content-wrap'>
+        <!-- 第一副画面 -->
+        <li class="screen-1">
+            <div class="screen-1-top"></div>
+            <div class="screen-1-middle"></div>
+            <div class="screen-1-bottom"></div>
+            <div class="cloudArea">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+            </div>
+            <div id="sun"></div>
+        </li>
+        <!-- 第二副画面 -->
+        <li class="screen-2">
+            <div class="doorBox">
+                <div id="doorL" class="door-left"></div>
+                <div id="doorR" class="door-right"></div>
+            </div>
+
+        </li>
+        <!-- 第三副画面 -->
+        <li>
+            三
+        </li>
+    </ul>
+    <div class="boyStyle"></div>
+    <div class="button start" >
+        <button>点击开始动画</button>
+    </div>
+    <div class="button stop" >
+        <button>点击暂停动画</button>
+    </div>
+    <div class="button clickDoor" onclick="openDoor()">
+        <button>点击开门</button>
+    </div>
+    <div class="button clickDoor1" onclick="closeDoor()">
+        <button>点击关门</button>
+    </div>
+</div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/BoyWalk.js"></script>
+<script type="text/javascript" src="js/Swipe.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        BoyWalk.initBoyT();
+
+        var contentWrapW = '-' + parseFloat($('.content-wrap').css('width')) + 'px';
+        var contentWrapW1 = '-' + parseFloat($('.content-wrap').css('width'))/3 + 'px';
+        console.log(contentWrapW)
+        console.log(contentWrapW1)
+
+        var w = parseFloat($('.content-wrap').css('width'))/3 + 'px';
+        $('.content-wrap>li').css('width',w);
+        $('.content-wrap').css('left',contentWrapW1);//================定位场景
+
+        // 太阳公转
+        $("#sun").addClass('rotation');
+        // 飘云
+        $(".cloud:first").addClass('cloudA');
+        $(".cloud:last").addClass('cloudB');
+    });
+
+    $('.start').click(function () {
+        BoyWalk.boyWalk('1');
+    });
+    $('.stop').click(function () {
+        BoyWalk.clearT();
+    })
+
+    // 开门
+    function openDoor() {
+        document.getElementById("doorL").style.transform = "rotateY(-90deg)";
+        document.getElementById("doorR").style.transform = "rotateY(-90deg)";
+        $('.door-right').addClass('openTheDoor').removeClass('closeTheDoor');
+        $('.door-left').addClass('openTheDoor1').removeClass('closeTheDoor1');
+    }
+
+    // 关门
+    function closeDoor() {
+        document.getElementById("doorL").style.transform = "rotateY(0deg)";
+        document.getElementById("doorR").style.transform = "rotateY(0deg)";
+        $('.door-right').addClass('closeTheDoor').removeClass('openTheDoor');
+        $('.door-left').addClass('closeTheDoor1').removeClass('openTheDoor1');
+    }
+</script>
+</html>
