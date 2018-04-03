@@ -7,46 +7,43 @@ function BoyWalk() {
     var mainW = parseFloat($('.content-wrap').css('width'));
     var boyW = parseFloat($('.boyStyle').css('width'));
     var setTime;
-    var actionW = function (step, stop) {
-        // console.log(setTime + '==init');
+    var actionW = function (step, t) {
+        // clearT(setTime);
         setTime = setTimeout(function () {
-            // console.log(setTime + '===start');
             var left = parseFloat($('.boyStyle').css('left'));
             var boyL = Math.round(left);
             var L0 = Math.round(mainW / 3 * 0.75 - boyW / 2);
-            var L1 = Math.round(mainW / 3 * 0.46);
-            // console.log(L1)
-            // console.log(boyL)
+            var L1 = Math.round(mainW / 3 * 0.44);
+            var L2;
             if (boyL == L0 && step == '1') {
                 swipe('1');
             } else if (boyL == L1 && step == '2') {
-                $('.boyStyle').removeClass('slowWalk');
-                setTimeout(function () {
-                    $('.boyStyle').addClass('slowWalk');
-                    $('.boyStyle').animate({'top': '21%',width: ''},2000,'linear');
-                },1500);
-                clearT();
+                swipe('2');
+            } else if (boyL == L2 && step == '3') {
+                //
+                // actionW(step, t);
             } else {
                 $('.boyStyle').css('left', left + 1 + 'px');
-                actionW(step, stop);
+                actionW(step, t);
             }
-            // console.log('in' + '==' + boyL);
-        }, 10);
+            // console.log(setTime)
+        }, t);
 
     };
 
     var clearT = function () {
         clearInterval(setTime);
-        console.log(setTime + '===end');
+        // console.log(name + '===end');
     };
 
-    var boyWalk = function (step, stop) {
-        if (!stop) {
+    var boyWalk = function (step, t, c) {
+        /*if (!stop) {
             $('.boyStyle').addClass('slowWalk');
         } else {
             $('.boyStyle').removeClass('slowWalk');
-        }
-        actionW(step, stop);
+        }*/
+        $('.boyStyle').addClass('slowWalk');
+        actionW(step, t);
     };
 
     var initBoyT = function () {
@@ -58,15 +55,19 @@ function BoyWalk() {
         var initT = middleT + middleH * 2 / 3 - boyH;
         $('.boyStyle').css('top', initT + 'px');
     };
+
     return {
         initBoyT: function () {
             initBoyT();
         },
-        boyWalk: function (step, stop) {
-            boyWalk(step, stop);
+        boyWalk: function (step, t) {
+            boyWalk(step, t);
         },
-        clearT: function () {
-            clearT();
+        actionW: function (step, t) {
+            actionW(step, t);
+        },
+        clearT: function (name) {
+            clearT(name);
         }
     }
 

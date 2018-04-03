@@ -11,9 +11,44 @@ var swipe = function (page) {
         $('.content-wrap').animate({'left':contentWrapW},3000,'linear');
         $('.boyStyle').animate({'left':'5%'},3000,'linear');
         setTimeout(function () {
-            BoyWalk.boyWalk('2');
+            BoyWalk.boyWalk('2',10);
         },3000);
+    } else if (page == '2') {
+        /*$('.content-wrap').animate({'left':contentWrapW},3000,'linear');
+        $('.boyStyle').animate({'left':'5%'},3000,'linear');
+        setTimeout(function () {
+            BoyWalk.boyWalk('2',10);
+        },3000);*/
+        intoShop();
     }
+};
+
+var setTime1;
+var boy = document.getElementById('boyStyle');
+//商店部分
+var fn1 = function () {
+    boy.style.opacity = '1';
+    boy.style.transform = 'scale(1)';
+    boy.style.transitionTimingFunction = 'linear';
+    boy.style.transitionDuration = '1s';
+    boy.style.transitionDelay = '2s';
+    $('.boyStyle').addClass('slowWalkFlowers');
+    // BoyWalk.actionW('3', 10);
+    closeDoor();
+    /*var setTime2 = setTimeout(function () {
+
+    }, 1000);*/
+};
+
+var intoShop = function () {
+    openDoor();
+    boy.style.opacity = '0';
+    boy.style.transform = 'scale(0.5,0.5)';
+    boy.style.transitionTimingFunction = 'linear';
+    boy.style.transitionDuration = '1s';
+    boy.style.transitionDelay = '1s';
+    fn1();
+    // setTime1 = setTimeout(fn1, 1000)
 };
 
 // BoyWalk.initBoyT();

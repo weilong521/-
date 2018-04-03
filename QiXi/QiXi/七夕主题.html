@@ -55,7 +55,8 @@
             三
         </li>
     </ul>
-    <div class="boyStyle"></div>
+    <div id="boyStyle"  class="boyStyle"></div>
+    <!--<div class="boyStyle"></div>-->
     <div class="button start" >
         <button>点击开始动画</button>
     </div>
@@ -85,7 +86,7 @@
 
         var w = parseFloat($('.content-wrap').css('width'))/3 + 'px';
         $('.content-wrap>li').css('width',w);
-        $('.content-wrap').css('left',contentWrapW1);//================定位场景
+        // $('.content-wrap').css('left',contentWrapW1);//================定位场景
 
         // 太阳公转
         $("#sun").addClass('rotation');
@@ -94,12 +95,18 @@
         $(".cloud:last").addClass('cloudB');
     });
 
+    var indexT1;
+    var boy = document.getElementById('boyStyle');
     $('.start').click(function () {
-        BoyWalk.boyWalk('1');
+        BoyWalk.boyWalk('1',10);
+        // $('.boyStyle').addClass('Flowers');
+        // $('.boyStyle').addClass('slowWalkFlowers');
+
     });
+
     $('.stop').click(function () {
         BoyWalk.clearT();
-    })
+    });
 
     // 开门
     function openDoor() {
